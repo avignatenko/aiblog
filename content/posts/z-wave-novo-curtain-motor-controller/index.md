@@ -28,7 +28,7 @@ The 5v power comes from DC barrel jack (5×2.1mm). Then to control the wires I o
 
 Parts list below:
 
-|Part                                                  |
+| Part                                                 |
 | ---------------------------------------------------- |
 | 1x Z-Uno v1 or v2 (https://z-uno.z-wave.me)          |       
 | 5x 1 kOm axial resistor                              |
@@ -40,19 +40,51 @@ Parts list below:
 
 The PCB is one-sided and very basic because I made with my tiny home CNC. I only used through-hole contacts since they are simpler for me to solder (YMMW).
 
-
-![Alt text](Photo-View_2023-10-20-1-1.svg)
-
 {{< img
-  src="pcb-image2.png"
+  src="pcb-top.png"
   width=100px
-  caption="Top side (component)" >}}
+  caption="Top side (component)"
+  caption-position="center">}}
 
 {{< img
-  src="pcb-image2.png"
-  caption="Bottom side (solder)" >}}
+  src="pcb-bottom.png"
+  caption="Bottom side (solder)"
+  caption-position="center">}}
 
 
 {{< img
-  src="pcb-image2.png"
-  caption="An early working 4-channel PCB prototype" >}}
+  src="working-proto.jpeg"
+  caption="An early working 4-channel PCB prototype" 
+  caption-position="center">}}
+
+
+## Controller firmware
+
+I used first generation Z-Uno that are typically programmed with Arduino IDE.
+
+The code is here: https://github.com/avignatenko/novo2zwave.
+
+It maps curtain controls into five buttons, each button to a motor action: continuous open/close, stepped open-close, and stop. The only tricky part is releasing virtual switches. NOVO expects signals to come from real momentary switches, and stay pressed for certain time, like 0.5-1sec in order to trigger the action. That was simulated in the code, only requiring z-wave controller to send one ‘switch on’ signal.
+
+That’s it.
+
+## Lessons learned
+
+* No need for a separate DC jack – easier to reuse micro-usb plug
+* Use MOSFETs
+
+## References
+
+* [Gerber files](Gerber_PCB_NOVO-Curtain-controller_2023-10-27.zip)
+* [Code](https://github.com/avignatenko/novo2zwave)
+
+
+{{< img
+  src="boxed.jpeg"
+  caption="“Boxed” version of the controller" 
+  caption-position="center">}}
+
+  {{< img
+  src="installed.jpeg"
+  caption="Installation (terminal cover removed from the motor)" 
+  caption-position="center">}}
