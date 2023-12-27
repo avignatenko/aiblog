@@ -1,0 +1,40 @@
+baseURL: 'https://ignatenko.me/'
+languageCode: 'en-us'
+title: "Alexey's corner"
+theme: 'PaperMod'
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+
+    env: production 
+
+    homeInfoParams:
+      Title: "Hi there \U0001F44B"
+      Content: My name is Alexey Ignatenko. I am an executive and a professional in software engineering. 
+               Here I share my personal projects and learnings.
+    socialIcons: 
+          - name: "Instagram"
+            url: "https://instagram.com/aignatenko"
+          - name: "LinkedIn"
+            url: "https://linkedin.com/in/alexeyignatenko"
+          - name: "GitHub"
+            url: "https://github.com/avignatenko"
+ 
+#menu:
+#  main:
+#    - identifier: camsim
+#      name: CANSim
+#      url: /categories/cansim
+#      weight: 10
+#    - identifier: smart-home
+#      name: Smart Home
+#      url: /categories/smart-home
+#      weight: 20

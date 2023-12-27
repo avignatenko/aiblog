@@ -2,19 +2,19 @@
 title: "Z-Wave NOVO curtain motor controller"
 draft: false
 date: 2023-10-07
-description: "I have Novo motorized curtains that I can operate wirelessly using a remote (no Wi-Fi as this module is quite old). Although very helpful, curtains should not stand out in a smart home where everything is controlled by automation. In order to integrate my curtains into the Z-Wave network, I chose to create a simple DYI controller"
-categories:
-  - Smart Home
-tags:
+description: "I have Novo motorized curtains that I can operate wirelessly using a remote (no Wi-Fi as this module is quite old). Although very helpful, curtains should not stand out in a smart home where everything is controlled by automation. In order to integrate my curtains into the Z-Wave network, I chose to create a simple DYI controller."
+summary: "A simple DYI Z-Wave controller for motorized curtains"
+categories: ["Smart Home", "DYI"]
+ShowToc: true
+TocOpen: true
 ---
 
-I have Novo motorized curtains that I can operate wirelessly using a remote (no Wi-Fi as this module is quite old). Although very helpful, curtains should not stand out in a smart home where everything is controlled by automation. In order to integrate my curtains into the Z-Wave network, I chose to create a simple DYI controller
 
 ## Approach
 
 I utilized a Z-Uno project module (https://z-uno.z-wave.me) for the Z-Wave controller. According to Novo tech docs, they have a contract wired interface (RJ12), which makes everything really simple: the Z-Uno will supply Z-Wave interface and will control a curtain motor though dry contacts.
 
-{{< img
+{{< figure
   src="novo-motor.png"
   caption="An extract from NOVO curtain motor datasheet with connection interface" >}}
 
@@ -22,7 +22,7 @@ I utilized a Z-Uno project module (https://z-uno.z-wave.me) for the Z-Wave contr
 
 The 5v power comes from DC barrel jack (5×2.1mm). Then to control the wires I only needed 4 transistors with 4 base resistors, and an RJ12 socket.
 
-{{< img
+{{< figure
   src="pcb-image2.png"
   caption="This is the default position of a figcaption, but it can be centered or at the end." >}}
 
@@ -40,19 +40,19 @@ Parts list below:
 
 The PCB is one-sided and very basic because I made with my tiny home CNC. I only used through-hole contacts since they are simpler for me to solder (YMMW).
 
-{{< img
+{{< figure
   src="pcb-top.png"
   width=100px
   caption="Top side (component)"
   caption-position="center">}}
 
-{{< img
+{{< figure
   src="pcb-bottom.png"
   caption="Bottom side (solder)"
   caption-position="center">}}
 
 
-{{< img
+{{< figure
   src="working-proto.jpeg"
   caption="An early working 4-channel PCB prototype" 
   caption-position="center">}}
@@ -79,12 +79,12 @@ That’s it.
 * [Code](https://github.com/avignatenko/novo2zwave)
 
 
-{{< img
+{{< figure
   src="boxed.jpeg"
   caption="“Boxed” version of the controller" 
   caption-position="center">}}
 
-  {{< img
+  {{< figure
   src="installed.jpeg"
   caption="Installation (terminal cover removed from the motor)" 
   caption-position="center">}}
