@@ -8,6 +8,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+
 minify:
   disableXML: true
   minifyOutput: true
@@ -18,8 +19,8 @@ params:
 
     homeInfoParams:
       Title: "Hi there \U0001F44B"
-      Content: My name is Alexey Ignatenko. I am an executive and a professional in software engineering. 
-               Here I share my personal projects and learnings.
+      Content: My name is Alexey Ignatenko. I am an executive and a seasoned professional in 
+               software engineering. Here I share my personal projects and learnings.
     socialIcons: 
           - name: "Instagram"
             url: "https://instagram.com/aignatenko"
@@ -27,7 +28,9 @@ params:
             url: "https://linkedin.com/in/alexeyignatenko"
           - name: "GitHub"
             url: "https://github.com/avignatenko"
- 
+    cover:
+         hiddenInList: true
+
 #menu:
 #  main:
 #    - identifier: camsim
