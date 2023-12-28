@@ -30,8 +30,8 @@ params:
             url: "https://linkedin.com/in/alexeyignatenko"
           - name: "GitHub"
             url: "https://github.com/avignatenko"
-    cover:
-         hiddenInList: true
+    #cover:
+    #     hiddenInList: true
 
 #menu:
 #  main:

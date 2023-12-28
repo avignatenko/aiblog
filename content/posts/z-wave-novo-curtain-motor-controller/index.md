@@ -7,6 +7,9 @@ summary: "A simple DYI Z-Wave controller for motorized curtains"
 tags: ["Smart Home", "DYI"]
 ShowToc: true
 TocOpen: true
+cover:
+    image: "working-proto.jpeg"
+    hiddenInSingle: true
 ---
 
 
