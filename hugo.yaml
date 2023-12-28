@@ -17,6 +17,8 @@ params:
 
     env: production 
 
+    ShowPostNavLinks: true
+    
     homeInfoParams:
       Title: "Hi there \U0001F44B"
       Content: My name is Alexey Ignatenko. I am an executive and a seasoned professional in 
