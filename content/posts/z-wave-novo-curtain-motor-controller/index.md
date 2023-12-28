@@ -42,7 +42,6 @@ The PCB is one-sided and very basic because I made with my tiny home CNC. I only
 
 {{< figure
   src="pcb-top.png"
-  width=100px
   caption="Top side (component)"
   caption-position="center">}}
 
