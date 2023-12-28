@@ -5,7 +5,7 @@ date: 2023-10-01
 description: "This 3 1/8 inch gauge has a single arrow with about 300 degree smooth movement range.
              Typical application is airspeed (ASI) or vertical speed (VSI) indicators."
 summary: "Description of DYI 3 1/8 inch gauge for flight simulation"
-categories: ["CANSim", "DYI"]
+tags: ["CANSim", "DYI"]
 ShowToc: true
 TocOpen: true
 cover:

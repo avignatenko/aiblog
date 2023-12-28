@@ -4,7 +4,7 @@ draft: false
 date: 2023-10-07
 description: ""
 summary: "The description of CAN bus physical interface I use for CANSim"
-categories: ["CANSim", "DYI"]
+tags: ["CANSim", "DYI"]
 ---
 
 I use RJ45 for CAN communication in CAMSim.  It has many advantages over classic DSUB. I don’t think there is a better cable for CAN. The 100Ω differential resistance of RJ45 is close enough to the 120Ω required by CAN, RJ45 is cheap and easy to handle.

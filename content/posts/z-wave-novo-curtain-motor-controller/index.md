@@ -4,7 +4,7 @@ draft: false
 date: 2023-10-07
 description: "I have Novo motorized curtains that I can operate wirelessly using a remote (no Wi-Fi as this module is quite old). Although very helpful, curtains should not stand out in a smart home where everything is controlled by automation. In order to integrate my curtains into the Z-Wave network, I chose to create a simple DYI controller."
 summary: "A simple DYI Z-Wave controller for motorized curtains"
-categories: ["Smart Home", "DYI"]
+tags: ["Smart Home", "DYI"]
 ShowToc: true
 TocOpen: true
 ---
