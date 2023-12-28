@@ -33,6 +33,10 @@ params:
     cover:
         hiddenInList: true
 
+    editPost:
+        URL: "https://github.com/avignatenko/aiblog/edit/main/content/"
+        Text: "edit"
+        appendFilePath: true 
 #menu:
 #  main:
 #    - identifier: camsim
