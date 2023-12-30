@@ -24,6 +24,8 @@ params:
       Content: My name is Alexey Ignatenko. I am an executive and a seasoned professional in 
                software engineering. Here I share personal projects and learnings.
     socialIcons: 
+          - name: "email"
+            url: "mailto:alexey.ignatenko@gmail.com"
           - name: "Instagram"
             url: "https://instagram.com/aignatenko"
           - name: "LinkedIn"
