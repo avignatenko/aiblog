@@ -22,6 +22,8 @@ I already had Gydrolock motorized valves installed and working through a proprti
 
 ## Hardware design
 
+{{< figure src="Schematic_Z-Wave Water Controller_2024-01-03.svg" caption="“" caption-position="center">}}
+
 ## Controller firmware
 
 ## Lessons learned
