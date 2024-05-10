@@ -8,7 +8,7 @@ AddElementTag("custom", $bgColor="#d73027")
 AddElementTag("hardware", $bgColor="brown", $shape=EightSidedShape())
 AddRelTag("network", $lineColor="red")
 
-Deployment_Node(pc, "Primary PC") {
+Container_Boundary(pc, "Primary PC") {
 
 Container_Boundary(xplane, "X-Plane"){
     Container(xplaneApp, "X-Plane App", $techn="app")
@@ -43,7 +43,7 @@ Container_Boundary(controllers, "Hardware controllers"){
 }
 
 
-Deployment_Node(cockpit, "Cockpit") {
+Container_Boundary(cockpit, "Cockpit") {
     Container(ffbYoke, "FFB Yoke", $tags="hardware")
     BiRel(ffbYoke, controlLoader, "talks to", $techn="USB Serial")
 
@@ -56,6 +56,11 @@ Deployment_Node(cockpit, "Cockpit") {
     Container(shaker, "Shaker", $tags="hardware")
     BiRel(shaker, shakerControl, "talks to", $techn="USB Serial")
 
+    Container(throttles, "Throttles", $tags="hardware")
+    Rel(throttles, xplaneApp, "sends data to", $techn="USB Serial")
+
+    Container(rudderPedals, "Rudder Pedals", $tags="hardware")
+    Rel(rudderPedals, xplaneApp, "sends data to", $techn="USB Serial")
 }
 
 SHOW_LEGEND(false)
