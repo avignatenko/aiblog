@@ -46,6 +46,7 @@ Container_Boundary(controllers, "Hardware controllers"){
 Container_Boundary(cockpit, "Cockpit") {
     Container(ffbYoke, "FFB Yoke", $tags="hardware")
     BiRel(ffbYoke, controlLoader, "talks to", $techn="USB Serial")
+    Rel(ffbYoke, xplaneApp, "sends data to", $techn="USB Serial")
 
     Container(elTrim, "Elevator Trim", $tags="hardware")
     BiRel(elTrim, trimControl, "talks to", $techn="USB Serial")
