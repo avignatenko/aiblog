@@ -6,46 +6,51 @@ title X-Plane Piper Cockpit architecture
 
 AddElementTag("custom", $bgColor="#d73027")
 AddElementTag("hardware", $bgColor="brown", $shape=EightSidedShape())
+AddElementTag("planned", $bgColor="green")
+
 AddRelTag("network", $lineColor="red")
 
-Container_Boundary(pc, "Primary PC") {
+System_Boundary(pc, "Primary PC") {
 
-Container_Boundary(xplane, "X-Plane"){
-    Container(xplaneApp, "X-Plane App", $techn="app")
-    Container(airManagerPlugin, "AirManager\nPlugin")
+    Container_Boundary(xplane, "X-Plane"){
+        Container(xplaneApp, "X-Plane App", $techn="app")
+        Container(airManagerPlugin, "AirManager\nPlugin")
 
-    BiRel_D(xplaneApp, airManagerPlugin, "variables/actions", $techn="X-Plane Plugin API")
+        BiRel(xplaneApp, airManagerPlugin, "variables/actions", $techn="X-Plane Plugin API")
+    }
+
+    Container(altFS, "AltFS", $techn="app", $descr="FSUIPC alternative", $tags="custom")
+    BiRel(altFS, xplaneApp, "variables/actions", $techn="UDP API", $tags="network")
+
+    Container(JoyFS, "JoyFS", $techn="app", $descr="Joy->FSUIPC", $tags="planned+custom")
+    BiRel(altFS, JoyFS, "variables", $techn="FSUIPC API")
+
+    Container(altBFF, "AltBFF", $techn="app", $descr="FFB Yoke controller", $tags="custom")
+    BiRel(altBFF, altFS, "variables/actions", $techn="FSUIPC API")
+
+
+    Boundary(controllers, "Hardware controllers"){
+        Container(controlLoader, "ControlLoader", $techn="app")
+        BiRel(controlLoader, altBFF, "talks to", $techn="UDP", $tags="network")
+
+        Container(trimControl, "TrimControl", $techn="app", $descr="Hardware elevator trim controller")
+        BiRel(trimControl, altFS, "variables/actions", $techn="FSUIPC API")
+
+        Container(shakerControl, "ShakerControl", $techn="app", $descr="Hardware shaker controller")
+        BiRel(shakerControl, altFS, "variables/actions", $techn="FSUIPC API")
+
+        Container(airManager, "Air Manager", $techn="app")
+        BiRel(airManager, airManagerPlugin, "variables/actions", $techn="UDP?", $tags="network")
+
+    }
+
 
 }
 
-Container(altFS, "AltFS", $techn="app", $descr="FSUIPC alternative", $tags="custom")
-BiRel(altFS, xplaneApp, "variables/actions", $techn="UDP API", $tags="network")
-
-Container(altBFF, "AltBFF", $techn="app", $descr="FFB Yoke controller", $tags="custom")
-BiRel(altBFF, altFS, "variables/actions", $techn="FSUIPC API")
-
-Container_Boundary(controllers, "Hardware controllers"){
-    Container(controlLoader, "ControlLoader", $techn="app")
-    BiRel(controlLoader, altBFF, "talks to", $techn="UDP", $tags="network")
-
-    Container(trimControl, "TrimControl", $techn="app", $descr="Hardware elevator trim controller")
-    BiRel(trimControl, altFS, "variables/actions", $techn="FSUIPC API")
-
-    Container(shakerControl, "ShakerControl", $techn="app", $descr="Hardware shaker controller")
-    BiRel(shakerControl, altFS, "variables/actions", $techn="FSUIPC API")
-
-    Container(airManager, "Air Manager", $techn="app")
-    BiRel(airManager, airManagerPlugin, "variables/actions", $techn="UDP?", $tags="network")
-
-}
-
-
-}
-
-
-Container_Boundary(cockpit, "Cockpit") {
+System_Boundary(cockpit, "Cockpit") {
     Container(ffbYoke, "FFB Yoke", $tags="hardware")
     BiRel(ffbYoke, controlLoader, "talks to", $techn="USB Serial")
+    Rel(ffbYoke, JoyFS, "sends data to", $techn="USB Serial")
     Rel(ffbYoke, xplaneApp, "sends data to", $techn="USB Serial")
 
     Container(elTrim, "Elevator Trim", $tags="hardware")
@@ -64,6 +69,6 @@ Container_Boundary(cockpit, "Cockpit") {
     Rel(rudderPedals, xplaneApp, "sends data to", $techn="USB Serial")
 }
 
-SHOW_LEGEND(false)
+SHOW_LEGEND()
 
 @enduml
