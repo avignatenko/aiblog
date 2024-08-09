@@ -22,8 +22,8 @@ System_Boundary(pc, "Primary PC") {
     Container(altFS, "AltFS", $techn="app", $descr="FSUIPC alternative", $tags="custom")
     BiRel(altFS, xplaneApp, "variables/actions", $techn="UDP API", $tags="network")
 
-    Container(JoyFS, "JoyFS", $techn="app", $descr="Joy->FSUIPC", $tags="planned+custom")
-    BiRel(altFS, JoyFS, "variables", $techn="FSUIPC API")
+  '  Container(JoyFS, "JoyFS", $techn="app", $descr="Joy->FSUIPC", $tags="planned+custom")
+  '  BiRel(altFS, JoyFS, "variables", $techn="FSUIPC API")
 
     Container(altBFF, "AltBFF", $techn="app", $descr="FFB Yoke controller", $tags="custom")
     BiRel(altBFF, altFS, "variables/actions", $techn="FSUIPC API")
@@ -50,7 +50,7 @@ System_Boundary(pc, "Primary PC") {
 System_Boundary(cockpit, "Cockpit") {
     Container(ffbYoke, "FFB Yoke", $tags="hardware")
     BiRel(ffbYoke, controlLoader, "talks to", $techn="USB Serial")
-    Rel(ffbYoke, JoyFS, "sends data to", $techn="USB Serial")
+    Rel(ffbYoke, trimControl, "sends data to", $techn="USB Serial")
     Rel(ffbYoke, xplaneApp, "sends data to", $techn="USB Serial")
 
     Container(elTrim, "Elevator Trim", $tags="hardware")
