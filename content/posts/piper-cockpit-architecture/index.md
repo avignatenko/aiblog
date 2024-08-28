@@ -10,6 +10,21 @@ TocOpen: true
 ---
 
 
+{{< figure
+  src="architecture.png"
+  width=100%
+  align=center
+  caption="High-level components diagram for the cockpit"
+  caption-position="center">}}
+
+
+
+{{< figure
+  src="preview2.jpg"
+  width=70%
+  align=center
+  caption="In-progress build of PA-28R cockpit as on August 2024"
+  caption-position="center">}}
 
 {{< figure
   src="preview.jpg"
@@ -18,9 +33,4 @@ TocOpen: true
   caption="In-progress build of PA-28R cockpit as on May 2024"
   caption-position="center">}}
 
-{{< figure
-  src="architecture.png"
-  width=100%
-  align=center
-  caption="High-level components diagram for the cockpit"
-  caption-position="center">}}
+
