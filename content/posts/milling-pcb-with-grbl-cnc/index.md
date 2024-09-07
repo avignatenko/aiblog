@@ -4,7 +4,7 @@ draft: false
 date: 2024-09-07
 description: "A quick guide to mill one-sided PCBs on a cheap GBRL CNC"
 summary: "A quick guide to mill one-sided PCBs on a cheap GBRL CNC"
-tags: ["CANSim", "DYI"]
+tags: ["CANSim", "DYI", "CNC", "PCB"]
 ---
 
 ## Overview
